@@ -1,11 +1,11 @@
-# BIOPUNK // LABS — The Red Horizon Fellowship
+# Emergence Institute — The Red Horizon Fellowship
 
 Static site for the **Red Horizon Fellowship**, a speculative-fiction + biosecurity
-program under **BIOPUNK // LABS**. Fellows write the biotech catastrophe that hasn't
+program of the **Emergence Institute**. Fellows write the biotech catastrophe that hasn't
 happened yet, red-team it, and build the countermeasure at the bench — then publish the
 fix and redact the hazard.
 
-**No build step, no framework.** Every file is served as-is (GitHub Pages friendly).
+**No build step, no framework.** Every file is served as-is (GitHub Pages / Netlify friendly).
 
 ## The premise
 
@@ -28,17 +28,17 @@ loop on every project:
 | `case-study.html` | `/case-study` | Sample **Case File 014 — "The Printer in the Garage"** (full loop, hazard redacted) |
 | `charter.html` | `/charter` | Safety charter: redaction law, responsible disclosure, dual-use review, code of conduct |
 | `apply.html` | `/apply` | Application form (tracks, scenario pitch, countermeasure, biosafety attestations) |
-| `assets/styles.css` | — | Shared stylesheet (Biopunk Brand Guide v1.1) |
+| `assets/styles.css` | — | Shared stylesheet |
 | `assets/site.js` | — | Shared interactions (nav, scroll reveal, form) |
 
-## Brand system (Brand Guide v1.1)
+## Design system
 
-- **Color:** Biopunk Black + Bone dominate (>80% of any surface). **Venom Red** is signal only.
+- **Color:** near-black + bone dominate (>80% of any surface). **Venom red** is signal only.
 - **Type:** Big Shoulders Stencil Display (display) · Space Grotesk (body) · JetBrains Mono
   (data/labels) · Special Elite (gonzo field notes). All via Google Fonts.
-- **Rules:** no italics for emphasis (use bold / caps / venom red); documentary + collage
-  register (no stock photos); hard edges; manifesto over marketing; banned-vocabulary list
-  enforced.
+- **Register:** documentary + collage (no stock photos); hard edges; manifesto over
+  marketing. Motifs: redacted-dossier panels, hazard tape, rubber stamps, an
+  emergence/network logomark.
 
 ## Application form
 
@@ -48,8 +48,8 @@ To collect real submissions, set the `FELLOWSHIP_ENDPOINT` constant near the top
 
 ## Deploy
 
-Push to the default branch; GitHub Pages serves it. `.nojekyll` is present so `assets/`
-and path routes serve cleanly.
+Push the default branch; the host (GitHub Pages / Netlify) serves it. `.nojekyll` is present
+so `assets/` and path routes serve cleanly.
 
 ## Safety note
 

@@ -1,4 +1,4 @@
-/* BIOPUNK // LABS — shared interactions. Dependency-free. */
+/* Emergence Institute — shared interactions. Dependency-free. */
 (function () {
   "use strict";
 
@@ -71,7 +71,7 @@
               submit.disabled = false;
               submit.textContent = "File application";
             }
-            alert("Transmission failed. Email labs@biopunk.life instead.");
+            alert("Transmission failed. Email fellowship@emergence-institute.org instead.");
           });
       } else {
         setTimeout(done, 650);

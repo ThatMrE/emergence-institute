@@ -1,8 +1,8 @@
 /* ==========================================================================
-   BIOPUNK // LABS — The Red Horizon Fellowship
+   Emergence Institute — The Red Horizon Fellowship
    Brand Guide v1.1 compliant. No build step; served as-is.
 
-   Palette : Biopunk Black + Bone dominate (>80% of any surface).
+   Palette : Near-black + Bone dominate (>80% of any surface).
              Venom Red is SIGNAL — used sparingly, never as a wash.
    Type    : Big Shoulders Stencil Display (display) · Space Grotesk (body)
              JetBrains Mono (labels/data) · Special Elite (gonzo field notes)
@@ -11,7 +11,7 @@
    ========================================================================== */
 
 :root{
-  --black:   #0b0b0c;   /* Biopunk Black */
+  --black:   #0b0b0c;   /* near-black */
   --ink:     #121213;   /* raised panel  */
   --ink-2:   #171718;
   --bone:    #ece6d6;   /* Bone          */
