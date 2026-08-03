@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Case File 014 — The Printer in the Garage · BIOPUNK // LABS</title>
+<meta name="description" content="A sample Red Horizon case file: a speculative outbreak scenario, the red-team that tore it apart, and the open countermeasure a fellow built and shipped — with the hazard fully redacted." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b0c'/%3E%3Ccircle cx='50' cy='53' r='32' fill='none' stroke='%23ece6d6' stroke-width='7'/%3E%3Cpath d='M50 26 L32 80 M50 26 L68 80 M20 60 H80' stroke='%23ece6d6' stroke-width='7'/%3E%3Ccircle cx='50' cy='53' r='6' fill='%23e11d10'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="index.html" aria-label="Biopunk Labs home">
+      <svg class="brand__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="53" r="32" stroke="#ece6d6" stroke-width="7"/><path d="M50 26 L32 80 M50 26 L68 80 M20 60 H80" stroke="#ece6d6" stroke-width="7" stroke-linecap="square"/><circle cx="50" cy="53" r="6" fill="#e11d10"/></svg>
+      <span class="brand__txt">BIOPUNK <i>//</i> LABS<small>The Red Horizon Fellowship</small></span>
+    </a>
+    <div class="nav__links" id="navlinks">
+      <a href="index.html#loop">The Loop</a>
+      <a href="fellows.html">Fellows</a>
+      <a href="case-study.html" class="active">Case File</a>
+      <a href="charter.html">Charter</a>
+      <a class="nav__cta" href="apply.html">Apply</a>
+    </div>
+    <button class="nav__burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="wrap">
+    <p class="crumbs reveal"><a href="index.html">Home</a> / <a href="fellows.html">Fellows</a> / <span>Case File 014</span></p>
+    <p class="kick reveal">Sample case file · Red Horizon dispatch</p>
+    <h1 class="h-sec reveal" style="margin-top:1rem;">File 014 —<br />The Printer in the Garage</h1>
+    <p class="lead reveal">One project, start to finish: the scenario a fellow wrote, the red-team that tried to break it, the countermeasure she built at the bench, and the disclosure trail that let us publish it. The hazard itself never appears. That's the point.</p>
+  </div>
+</header>
+
+<div class="tape"></div>
+
+<section class="section" style="padding-top:clamp(32px,5vw,60px);">
+  <div class="wrap">
+    <div class="dispatch reveal">
+      <div class="dispatch__hd">
+        <span class="live"></span>
+        <span>FILE 014</span>
+        <span>FELLOW // Nadia Okafor (composite)</span>
+        <span>THREAT CLASS // benchtop synthesis screening gap</span>
+        <span class="stamp stamp--venom">HAZARD REDACTED</span>
+        <span class="stamp stamp--bone">FIX SHIPPED</span>
+      </div>
+      <div class="dispatch__body">
+        <div class="prose">
+
+          <!-- PHASE 01 -->
+          <h4>Phase 01 — Horizon · the scenario</h4>
+          <p class="first">The brief was a single line on an index card: <strong>an outbreak with no origin.</strong> Nadia — a hospital microbiologist by day, a horror writer by the hours no one should be awake — took it and wrote a novella. Here is how it opens.</p>
+
+          <div class="fiction">
+            <span class="tag">Excerpt // "The Printer in the Garage"</span>
+            The third patient is what breaks the pattern, because the third patient has never left the county, never traveled, never eaten anywhere the first two ate, never touched them, and is running the same fever curve to the hour. I stand in the cold room at 3 a.m. with three culture plates and a feeling like a floor giving way. Contact tracing is a map of a city. What I am looking at has no map. It did not come from anywhere. Somewhere across town a machine the size of a microwave has been running all night, quiet as a sleeping animal, and in the morning its owner will pour what it made down a drain and go to work.
+          </div>
+
+          <p>The novella never explains how the machine works. It doesn't have to — the dread lives in the microbiologist's dawning understanding, not in any instructions. That restraint is a fellowship rule, not a stylistic choice: <strong>the scenario names a failure mode, never a method.</strong> The threat class here is plain and already discussed openly in policy circles — cheap benchtop DNA synthesis that ships without meaningful screening.</p>
+
+          <!-- PHASE 02 -->
+          <h4>Phase 02 — Red Team · tear it apart</h4>
+          <p>A panel of scientists, a security researcher, and a bioethicist spent a day trying to prove the story couldn't happen. They couldn't. What they produced instead was a threat model that named the load-bearing assumption — the single hinge the whole plot rests on:</p>
+
+          <blockquote class="big-quote venom" style="border-left:3px solid var(--venom); padding-left:1.4rem; margin:1.6rem 0;">If the device will print anything, screening at the order desk is theater.</blockquote>
+
+          <p>The red-team's job was not to make the threat more vivid. It was the opposite: to find the one place a defender could stand and make the story <strong>boring</strong>. They found it. If screening moves from the ordering website down to the device itself — the last point before synthesis — the garage printer stops being a plot device. The specifics of any bypass were documented once, in a sealed annex, and handed straight to the disclosure track. They are not here. They are not anywhere public.</p>
+
+          <div class="callout callout--warn">
+            <h4>What you will not find below</h4>
+            <p>No sequences. No synthesis routes. No device makes, models, or bypass steps. No "how the outbreak was built." Everything operationally hazardous from this project lives under managed disclosure with the relevant vendors and authorities. What follows is the <strong>defense</strong> — which is safe, useful, and yours.</p>
+          </div>
+
+          <!-- PHASE 03 -->
+          <h4>Phase 03 — Countermeasure · build the fix</h4>
+          <p>Then Nadia put the novella down and picked up a soldering iron. Over a six-week sprint in a safety-reviewed community lab — capped by the 72-hour push the fellowship is built around — the countermeasure crew turned the red-team's one sentence into working defenses. Three of them, plus a brief.</p>
+
+          <div class="artifacts">
+            <div class="artifact"><span class="artifact__ic">[01]</span><div><b>sequence-firewall</b><span>An open-source screening layer that sits between any synthesis tool and its device, so a screening check runs at the last safe moment — not just at the website. Reference implementation, permissive license, designed for vendors to adopt. <code>github: biopunk-labs/sequence-firewall</code></span></div></div>
+            <div class="artifact"><span class="artifact__ic">[02]</span><div><b>Rapid detection panel</b><span>A field protocol that flags the relevant biomarker class from an environmental sample — written in purely defensive terms, so a public-health lab can watch for exactly the "outbreak with no origin" the story imagines. Detection only; nothing about creating anything.</span></div></div>
+            <div class="artifact"><span class="artifact__ic">[03]</span><div><b>"Printed" tabletop kit</b><span>A facilitator deck that drops a room into hour one of the scenario and races them to the fix. Run by three community labs so far. All tension, zero hazardous detail.</span></div></div>
+            <div class="artifact"><span class="artifact__ic">[04]</span><div><b>Screening-at-the-device brief</b><span>A one-page ask for synthesis vendors and funders: move screening to the device, fund the open hooks that make it cheap. The specific gap, the specific fix, the specific bill.</span></div></div>
+          </div>
+
+          <p>On the last day of the sprint the crew ran <strong>sequence-firewall</strong> live against a benign test harness — strings of harmless, publicly-known sequence standing in for anything real — and watched it refuse the order at the device. Boring, on purpose. The whole point was to make the scariest scene in the novella impossible to stage.</p>
+
+          <!-- PHASE 04 -->
+          <h4>Phase 04 — Dispatch · publish the cure, redact the recipe</h4>
+          <p>Before anything went public, the whole package went to the biosafety board and down the disclosure track:</p>
+          <ul>
+            <li><strong>Vendors first.</strong> The screening-gap findings went to the relevant tool and device makers with a remediation window, before a word was published.</li>
+            <li><strong>Authorities in the loop.</strong> The sealed annex went to the appropriate biosecurity response channel — not to the internet.</li>
+            <li><strong>Board sign-off.</strong> Every artifact was reviewed line by line for anything that could uplift misuse. What couldn't be made safe wasn't shipped.</li>
+            <li><strong>Then the story.</strong> Only after all of that did the novella and the fixes publish together, as one dispatch.</li>
+          </ul>
+
+          <p>That's the loop. A monster imagined so precisely that a defender could find its one weak joint — and then a fix built, demonstrated, and handed out, with the dangerous half burned on the way to press. Fiction with a footnote: <strong class="venom">solved, shipped, disclosed.</strong></p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- outcome band -->
+    <div class="band reveal" style="margin-top:2.2rem;">
+      <div class="stat"><b>3</b><span>open countermeasures shipped</span></div>
+      <div class="stat"><b>1</b><span>vendor remediation opened</span></div>
+      <div class="stat"><b>3</b><span>labs running the tabletop</span></div>
+      <div class="stat"><b class="v">0</b><span>hazardous details published</span></div>
+    </div>
+
+    <p class="disclaimer reveal" style="margin-top:1.8rem;">
+      <b>This is a sample //</b> Case File 014, its fellow, and its artifacts are an illustrative
+      composite built to demonstrate the fellowship format end to end. Repository names and
+      figures are representative. The benchtop-synthesis screening gap is a real, openly-discussed
+      area of biosecurity policy; nothing on this page describes how to create, obtain, or misuse
+      any biological agent.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2 class="h-sec">Got a case file in you?</h2>
+      <p>If reading this made you want to write the scenario — and then go build the thing that kills it — that's the whole job description.</p>
+      <div class="hero__cta">
+        <a class="btn btn--venom" href="apply.html">File your application <span class="btn__arrow">→</span></a>
+        <a class="btn" href="charter.html">Read the safety charter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <a class="brand" href="index.html"><svg class="brand__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="53" r="32" stroke="#ece6d6" stroke-width="7"/><path d="M50 26 L32 80 M50 26 L68 80 M20 60 H80" stroke="#ece6d6" stroke-width="7" stroke-linecap="square"/><circle cx="50" cy="53" r="6" fill="#e11d10"/></svg><span class="brand__txt">BIOPUNK <i>//</i> LABS</span></a>
+        <p>The Red Horizon Fellowship. Speculative fiction as a biosecurity early-warning system. We publish the cure and redact the recipe.</p>
+        <p class="foot__fam">Family: <b>BIOPUNK</b> // CAPITAL · // COMMUNITY · // HOUSES · // <b>LABS</b></p>
+      </div>
+      <div class="foot__col"><h4>Program</h4><a href="index.html#loop">The Loop</a><a href="fellows.html">Fellows</a><a href="case-study.html">Case File</a><a href="apply.html">Apply</a></div>
+      <div class="foot__col"><h4>Governance</h4><a href="charter.html">Safety Charter</a><a href="charter.html#disclosure">Responsible Disclosure</a><a href="charter.html#conduct">Code of Conduct</a></div>
+      <div class="foot__col"><h4>Contact</h4><a href="mailto:labs@biopunk.life">labs@biopunk.life</a><a href="apply.html">Cohort 2026</a></div>
+    </div>
+    <div class="foot__bot"><span>© <span data-year>2026</span> BIOPUNK // LABS · a speculative-fiction &amp; biosecurity program</span><span>Publish the cure. Redact the recipe.</span></div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
