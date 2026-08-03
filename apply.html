@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apply — Emergence Institute · The Red Horizon Fellowship</title>
+<meta name="description" content="Apply to the Red Horizon Fellowship 2026 cohort. Bring a biotech scenario and the fix you'd build. Writers, bench scientists, policy, and red-teamers all welcome." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b0c'/%3E%3Ccircle cx='50' cy='52' r='32' fill='none' stroke='%23ece6d6' stroke-width='6'/%3E%3Cpath d='M50 52 L50 24 M50 52 L26 67 M50 52 L74 67' stroke='%23ece6d6' stroke-width='6'/%3E%3Ccircle cx='50' cy='24' r='6' fill='%23ece6d6'/%3E%3Ccircle cx='26' cy='67' r='6' fill='%23ece6d6'/%3E%3Ccircle cx='74' cy='67' r='6' fill='%23ece6d6'/%3E%3Ccircle cx='50' cy='52' r='7' fill='%23e11d10'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="index.html" aria-label="Emergence Institute home">
+      <svg class="brand__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="52" r="32" stroke="#ece6d6" stroke-width="6"/><path d="M50 52 L50 24 M50 52 L26 67 M50 52 L74 67" stroke="#ece6d6" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="24" r="6" fill="#ece6d6"/><circle cx="26" cy="67" r="6" fill="#ece6d6"/><circle cx="74" cy="67" r="6" fill="#ece6d6"/><circle cx="50" cy="52" r="7" fill="#e11d10"/></svg>
+      <span class="brand__txt">EMERGENCE INSTITUTE<small>Red Horizon Fellowship</small></span>
+    </a>
+    <div class="nav__links" id="navlinks">
+      <a href="index.html#loop">The Loop</a>
+      <a href="fellows.html">Fellows</a>
+      <a href="case-study.html">Case File</a>
+      <a href="charter.html">Charter</a>
+      <a class="nav__cta" href="apply.html">Apply</a>
+    </div>
+    <button class="nav__burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="wrap">
+    <p class="crumbs reveal"><a href="index.html">Home</a> / <span>Apply</span></p>
+    <p class="kick reveal">Cohort 2026 · applications open</p>
+    <h1 class="h-sec reveal" style="margin-top:1rem;">Bring us a monster<br />and a way to kill it.</h1>
+    <p class="lead reveal">Fourteen slots. Sixteen weeks, part-time, remote-first, ending in a live demo. No degree required — nerve and follow-through are. Writers, bench scientists, policy people, and red-teamers all belong here.</p>
+  </div>
+</header>
+
+<div class="tape"></div>
+
+<section class="section" style="padding-top:clamp(30px,5vw,56px);">
+  <div class="wrap">
+    <div class="grid grid--2" style="gap:2.4rem; align-items:start;">
+
+      <!-- side rail -->
+      <aside class="reveal" style="order:2;">
+        <div class="callout">
+          <h4>Who we take</h4>
+          <p style="margin-bottom:1rem;">You need to be strong in <strong>one</strong> of these and willing to learn the rest from your crew:</p>
+          <ul style="margin:0 0 0 1.1rem; color:var(--bone-2);">
+            <li><strong>Writers</strong> — fiction, gonzo/immersive journalism, screenwriting.</li>
+            <li><strong>Bench</strong> — wet-lab, synbio, diagnostics, hardware.</li>
+            <li><strong>Policy</strong> — biosecurity, governance, science comms.</li>
+            <li><strong>Red-team</strong> — security research, threat modeling, CTF.</li>
+          </ul>
+        </div>
+        <div class="callout" style="margin-top:1.1rem;">
+          <h4>Before you apply</h4>
+          <p>Read the <a href="charter.html" style="color:var(--venom); text-decoration:underline;">Safety Charter</a>. If "publish the cure, redact the recipe" isn't something you can live by, this isn't the fellowship for you.</p>
+        </div>
+        <div class="callout callout--warn" style="margin-top:1.1rem;">
+          <h4>Do not send hazards</h4>
+          <p>Your scenario pitch should describe a <strong>failure mode</strong> — never a method, sequence, or protocol for causing harm. Applications containing operational hazard detail are deleted unread.</p>
+        </div>
+        <p class="disclaimer" style="margin-top:1.1rem;">
+          <b>Demo //</b> This form has no live backend yet. On submit it shows a confirmation
+          state without sending anywhere. Wire the <code style="color:var(--venom)">FELLOWSHIP_ENDPOINT</code>
+          in <code style="color:var(--venom)">assets/site.js</code> to a Formspree / Tally / Google
+          Form URL to collect real applications.
+        </p>
+      </aside>
+
+      <!-- form -->
+      <div style="order:1;">
+        <form class="form" data-apply novalidate>
+          <div class="grid-2">
+            <div class="field"><label for="name">Full name <span class="req">*</span></label><input id="name" name="name" type="text" required autocomplete="name" /></div>
+            <div class="field"><label for="pronouns">Pronouns</label><input id="pronouns" name="pronouns" type="text" placeholder="optional" /></div>
+          </div>
+          <div class="grid-2">
+            <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+            <div class="field"><label for="location">Location / timezone <span class="req">*</span></label><input id="location" name="location" type="text" required placeholder="e.g. Oakland CA · PT" /></div>
+          </div>
+
+          <div class="field">
+            <label>Primary track <span class="req">*</span></label>
+            <div class="tracks">
+              <div class="track"><input type="radio" id="t-writer" name="track" value="writer" required /><label for="t-writer">Writer<small>fiction · gonzo</small></label></div>
+              <div class="track"><input type="radio" id="t-bench" name="track" value="bench" /><label for="t-bench">Bench<small>wet-lab · build</small></label></div>
+              <div class="track"><input type="radio" id="t-policy" name="track" value="policy" /><label for="t-policy">Policy<small>governance</small></label></div>
+              <div class="track"><input type="radio" id="t-redteam" name="track" value="redteam" /><label for="t-redteam">Red-team<small>security</small></label></div>
+            </div>
+          </div>
+
+          <div class="field"><label for="portfolio">Portfolio / writing sample link <span class="req">*</span></label><input id="portfolio" name="portfolio" type="url" required placeholder="https://" /><span class="hint">A story, article, repo, protocol, deck — whatever shows how you think.</span></div>
+
+          <div class="field"><label for="background">Technical &amp; creative background</label><textarea id="background" name="background" placeholder="Labs, publications, competitions (iGEM, CTFs), community labs, zines — the relevant parts of your story."></textarea></div>
+
+          <div class="field">
+            <label for="scenario">Your scenario pitch <span class="req">*</span></label>
+            <textarea id="scenario" name="scenario" required placeholder="In ~300 words: the biotech failure mode you'd write. The world, the dread, the stakes. Describe the DANGER — never a method, sequence, or recipe."></textarea>
+            <span class="hint">Failure mode, not manual. Anything that reads like operational instructions disqualifies the application.</span>
+          </div>
+
+          <div class="field"><label for="fix">The fix you'd chase <span class="req">*</span></label><textarea id="fix" name="fix" required placeholder="In ~200 words: the countermeasure you'd try to build — a detector, a screen, an indicator, a tabletop, a policy ask. Rough is fine. We care that you think in defenses."></textarea></div>
+
+          <div class="field"><label for="affiliation">Community labs / affiliations</label><input id="affiliation" name="affiliation" type="text" placeholder="Genspace, BioCurious, a DEF CON village, a DIYbio group…" /></div>
+
+          <div class="field">
+            <label for="heard">How did you find us?</label>
+            <select id="heard" name="heard">
+              <option value="">Select…</option>
+              <option>DEF CON Biohacking Village</option>
+              <option>iGEM</option>
+              <option>Global Community Bio Summit</option>
+              <option>A community / DIYbio lab</option>
+              <option>Emergence Institute newsletter or socials</option>
+              <option>A current or former fellow</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <label class="check"><input type="checkbox" name="attest_charter" required /><span>I've read the <a href="charter.html">Safety Charter</a> and I'll hold the line: publish the cure, redact the recipe. <span class="req">*</span></span></label>
+          <label class="check"><input type="checkbox" name="attest_nohazard" required /><span>My application contains <strong>no</strong> sequences, synthesis routes, or operational hazard detail. <span class="req">*</span></span></label>
+          <label class="check"><input type="checkbox" name="attest_conduct" required /><span>I agree to the <a href="charter.html#conduct">Code of Conduct</a> and to work under real biosafety and legal discipline. <span class="req">*</span></span></label>
+
+          <div>
+            <button class="btn btn--venom" type="submit">File application <span class="btn__arrow">→</span></button>
+            <p class="form__note" style="margin-top:1rem;">Applications reviewed on a rolling basis. Shortlisted applicants get a 30-minute call.</p>
+          </div>
+        </form>
+
+        <div class="form__ok">
+          <span class="stamp stamp--venom stamp--big">RECEIVED</span>
+          <h3>Application filed.</h3>
+          <p>If your scenario makes us nervous in the right way, you'll hear from us for a call. Meanwhile — start sketching the fix.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <a class="brand" href="index.html"><svg class="brand__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="52" r="32" stroke="#ece6d6" stroke-width="6"/><path d="M50 52 L50 24 M50 52 L26 67 M50 52 L74 67" stroke="#ece6d6" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="24" r="6" fill="#ece6d6"/><circle cx="26" cy="67" r="6" fill="#ece6d6"/><circle cx="74" cy="67" r="6" fill="#ece6d6"/><circle cx="50" cy="52" r="7" fill="#e11d10"/></svg><span class="brand__txt">EMERGENCE INSTITUTE</span></a>
+        <p>The Red Horizon Fellowship. Speculative fiction as a biosecurity early-warning system. We publish the cure and redact the recipe.</p>
+        <p class="foot__fam"><b>EMERGENCE INSTITUTE</b> — the whole is stranger than the sum of its parts.</p>
+      </div>
+      <div class="foot__col"><h4>Program</h4><a href="index.html#loop">The Loop</a><a href="fellows.html">Fellows</a><a href="case-study.html">Case File</a><a href="apply.html">Apply</a></div>
+      <div class="foot__col"><h4>Governance</h4><a href="charter.html">Safety Charter</a><a href="charter.html#disclosure">Responsible Disclosure</a><a href="charter.html#conduct">Code of Conduct</a></div>
+      <div class="foot__col"><h4>Contact</h4><a href="mailto:fellowship@emergence-institute.org">fellowship@emergence-institute.org</a><a href="apply.html">Cohort 2026</a></div>
+    </div>
+    <div class="foot__bot"><span>© <span data-year>2026</span> Emergence Institute · a speculative-fiction &amp; biosecurity program</span><span>Publish the cure. Redact the recipe.</span></div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,75 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emergence Institute</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: linear-gradient(135deg, #020210 0%, #080828 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: #fff;
-      overflow: hidden;
-    }
-    .container {
-      text-align: center;
-      padding: 2rem;
-      max-width: 600px;
-    }
-    .emoji {
-      font-size: 5rem;
-      display: block;
-      margin-bottom: 1.5rem;
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #a78bfa;
-      margin-bottom: 0.75rem;
-    }
-    .tagline {
-      font-size: 1.2rem;
-      opacity: 0.7;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
-    .body {
-      font-size: 1rem;
-      opacity: 0.55;
-      line-height: 1.6;
-    }
-    .dot {
-      width: 8px; height: 8px;
-      background: #a78bfa;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 2rem auto 0;
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.6); }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emergence Institute — The Red Horizon Fellowship</title>
+<meta name="description" content="A gonzo fellowship that writes the biotech disaster that hasn't happened yet — then red-teams it and builds the fix in the lab before anyone gets hurt. We publish the cure. We redact the recipe." />
+<meta property="og:title" content="Emergence Institute — The Red Horizon Fellowship" />
+<meta property="og:description" content="Write the outbreak. Red-team it. Kill it in the lab. Ship the cure, redact the recipe." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b0c'/%3E%3Ccircle cx='50' cy='52' r='32' fill='none' stroke='%23ece6d6' stroke-width='6'/%3E%3Cpath d='M50 52 L50 24 M50 52 L26 67 M50 52 L74 67' stroke='%23ece6d6' stroke-width='6'/%3E%3Ccircle cx='50' cy='24' r='6' fill='%23ece6d6'/%3E%3Ccircle cx='26' cy='67' r='6' fill='%23ece6d6'/%3E%3Ccircle cx='74' cy='67' r='6' fill='%23ece6d6'/%3E%3Ccircle cx='50' cy='52' r='7' fill='%23e11d10'/%3E%3C/svg%3E" />
 </head>
 <body>
-  <div class="container">
-    <span class="emoji">🌀</span>
-    <h1>Emergence Institute</h1>
-    <p class="tagline">Complex systems. Simple questions.</p>
-    <p class="body">The whole is stranger than the sum of its parts.</p>
-    <div class="dot"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="index.html" aria-label="Emergence Institute home">
+      <svg class="brand__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="53" r="32" stroke="#ece6d6" stroke-width="7"/>
+        <path d="M50 26 L32 80 M50 26 L68 80 M20 60 H80" stroke="#ece6d6" stroke-width="7" stroke-linecap="square"/>
+        <circle cx="50" cy="53" r="6" fill="#e11d10"/>
+      </svg>
+      <span class="brand__txt">EMERGENCE INSTITUTE<small>Red Horizon Fellowship</small></span>
+    </a>
+    <div class="nav__links" id="navlinks">
+      <a href="#loop">The Loop</a>
+      <a href="fellows.html">Fellows</a>
+      <a href="case-study.html">Case File</a>
+      <a href="charter.html">Charter</a>
+      <a class="nav__cta" href="apply.html">Apply</a>
+    </div>
+    <button class="nav__burger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero__tag">RED HORIZON</div>
+  <div class="wrap hero__in">
+    <p class="kick reveal">EMERGENCE INSTITUTE <b>//</b> COHORT 2026</p>
+    <h1 class="h-hero reveal">We write the outbreak.<br />Then we <span class="venom">kill it</span><br />by morning.</h1>
+    <p class="lead reveal">
+      A gonzo residency that treats fiction as an early-warning system. Fellows imagine the
+      biotech catastrophe that hasn't happened yet — then stop being novelists and become
+      red-teamers, at a real bench, building the fix while the story is still warm. You don't
+      get to leave a monster on the page. You have to prove you can put it down.
+    </p>
+    <div class="hero__cta reveal">
+      <a class="btn btn--venom" href="apply.html">File your application <span class="btn__arrow">→</span></a>
+      <a class="btn" href="case-study.html">Read a case file</a>
+    </div>
+    <div class="hero__meta reveal">
+      <div><b>72H</b><span>scenario → fix sprint</span></div>
+      <div><b class="v">0</b><span>hazards published, by rule</span></div>
+      <div><b>14</b><span>fellows per cohort</span></div>
+      <div><b>DEF&nbsp;CON</b><span>biohacking village demo track</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="tape"></div>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="grid grid--2" style="gap:2.6rem; align-items:start;">
+      <div class="reveal">
+        <p class="kick">The premise</p>
+        <h2 class="h-sec" style="margin:1.1rem 0;">Fiction gets to the danger first. So we send it in first.</h2>
+      </div>
+      <div class="reveal">
+        <p style="color:var(--bone-2); font-size:1.1rem;">
+          Every real biosecurity failure was imaginable years before it was buildable. The gap
+          between <strong>someone could</strong> and <strong>someone did</strong> is where
+          defenders should live — and almost nobody does, because naming the threat feels like
+          building it.
+        </p>
+        <p style="color:var(--bone-2); font-size:1.1rem; margin-top:1rem;">
+          The Red Horizon Fellowship closes that gap with a discipline we call
+          <strong class="venom">gonzo biosecurity</strong>: the writer who dreams up the threat
+          is the same person who has to disarm it — in a safety-reviewed lab, in real time, in
+          front of witnesses. Then we hand the antidote to the people who need it, and burn the
+          recipe. Fiction with a footnote that reads: <strong>solved, shipped, disclosed.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE LOOP ============ -->
+<section class="section" id="loop" style="padding-top:0;">
+  <div class="wrap">
+    <p class="kick reveal">The loop</p>
+    <h2 class="h-sec reveal" style="margin:1.1rem 0 .8rem;">Four phases. One law: leave it safer than you found it.</h2>
+    <p class="lead reveal">Every project runs the whole loop. A story is not finished until its countermeasure exists and works.</p>
+
+    <div class="loop">
+      <div class="phase phase--live reveal">
+        <div class="phase__no">01</div>
+        <h3>Horizon</h3>
+        <p>Write the scenario. A piece of speculative fiction imagining one specific, plausible way biotech goes wrong — a failure mode, never a manual. Character and dread do the work.</p>
+        <small>Output: the story</small>
+      </div>
+      <div class="phase reveal">
+        <div class="phase__no">02</div>
+        <h3>Red Team</h3>
+        <p>Adversarially tear the scenario apart with a biosecurity panel and a tabletop. Is it real? What's the actual attack surface? Which single assumption, if fixed, kills the whole plot?</p>
+        <small>Output: the threat model</small>
+      </div>
+      <div class="phase reveal">
+        <div class="phase__no">03</div>
+        <h3>Countermeasure</h3>
+        <p>The gonzo sprint. Fellows hit the bench in a safety-reviewed community lab and build the defense — a detection assay, a screening hook, an open protocol, a policy ask — that neutralizes the whole threat class.</p>
+        <small>Output: the fix</small>
+      </div>
+      <div class="phase reveal">
+        <div class="phase__no">04</div>
+        <h3>Dispatch</h3>
+        <p>Publish the fix and the story together, after biosafety review. The hazard stays redacted. The defense goes to every lab that can use it. The demo goes on the floor.</p>
+        <small>Output: the dispatch</small>
+      </div>
+    </div>
+
+    <div class="callout callout--warn reveal" style="margin-top:1.6rem;">
+      <h4>The redaction law</h4>
+      <p>We never publish operational hazard information — no sequences, synthesis routes, uplift methods, or step-by-step threat recipes. Every dispatch clears a biosafety review before release, and any hazardous detail is held under managed, responsible disclosure to the right authorities and vendors first. <strong>Publish the cure. Redact the recipe.</strong></p>
+    </div>
+  </div>
+</section>
+
+<div class="tape tape--venom"></div>
+
+<!-- ============ WHAT FELLOWS SHIP ============ -->
+<section class="section">
+  <div class="wrap">
+    <p class="kick reveal">Deliverables</p>
+    <h2 class="h-sec reveal" style="margin:1.1rem 0 2rem;">What a fellow actually ships</h2>
+    <div class="grid grid--3">
+      <div class="card reveal"><span class="card__tag">The Story</span><h3>A gonzo dispatch</h3><p>A finished piece of speculative fiction plus immersive, first-person field reporting — the anchor piece a general reader feels in the gut. Runs in the Red Horizon series.</p></div>
+      <div class="card reveal"><span class="card__tag">The Defense</span><h3>A working countermeasure</h3><p>An open-source tool, wet-lab detection protocol, screening rule, or tabletop kit — demonstrated to work, released under a permissive license so any lab can pick it up.</p></div>
+      <div class="card reveal"><span class="card__tag">The Record</span><h3>A disclosure trail</h3><p>A documented responsible-disclosure process: who got notified, what stayed dark, what changed. Signed off by the biosafety board before anything ships.</p></div>
+      <div class="card reveal"><span class="card__tag">The Demo</span><h3>A live red-team</h3><p>A demonstration at a public venue — most often the DEF CON Biohacking Village — where the fix gets shown, stress-tested, and handed to the room.</p></div>
+      <div class="card reveal"><span class="card__tag">The Brief</span><h3>A one-page ask</h3><p>Plain-language brief that turns the scenario into a specific demand on funders, regulators, or vendors: here is the gap, here is the fix, here is who pays for it.</p></div>
+      <div class="card reveal"><span class="card__tag">The Kit</span><h3>A reusable exercise</h3><p>A facilitated tabletop or cold-open drill, packaged so any institution can run the same scenario internally — all tension, zero hazardous detail.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED DISPATCH ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <p class="kick reveal">Featured case file</p>
+    <h2 class="h-sec reveal" style="margin:1.1rem 0 2rem;">File 014 — The Printer in the Garage</h2>
+    <div class="dispatch reveal">
+      <div class="dispatch__hd">
+        <span class="live"></span>
+        <span>FILE&nbsp;014</span>
+        <span>THREAT CLASS // benchtop synthesis screening gap</span>
+        <span class="stamp stamp--venom">HAZARD REDACTED</span>
+        <span class="stamp stamp--bone">FIX SHIPPED</span>
+      </div>
+      <div class="dispatch__body">
+        <div class="grid grid--2" style="gap:2.4rem; align-items:start;">
+          <div>
+            <p style="color:var(--bone-2); margin-bottom:1rem;">
+              A near-future where cheap desktop DNA synthesizers ship with no meaningful
+              screening. The story rides shotgun with a night-shift hospital microbiologist who
+              works out that the outbreak on her ward didn't come from anywhere. It was printed.
+            </p>
+            <p style="color:var(--bone-2);">
+              The countermeasure crew built an open screening layer that sits between any
+              synthesis tool and its device, a rapid detection panel for the biomarker class,
+              and a tabletop kit now run by three community labs. The fiction ships with the
+              exploit <span class="redact-bar" style="width:120px;"></span> fully burned.
+            </p>
+          </div>
+          <div>
+            <div class="artifacts">
+              <div class="artifact"><span class="artifact__ic">[TOOL]</span><div><b>sequence-firewall</b><span>Open screening hook for benchtop synthesis. <code>MIT license</code></span></div></div>
+              <div class="artifact"><span class="artifact__ic">[ASSAY]</span><div><b>Rapid detection panel</b><span>Field protocol to flag the biomarker class — defensive detail only.</span></div></div>
+              <div class="artifact"><span class="artifact__ic">[KIT]</span><div><b>"Printed" tabletop</b><span>Facilitator deck, run by 3 community labs so far.</span></div></div>
+              <div class="artifact"><span class="artifact__ic">[BRIEF]</span><div><b>Policy one-pager</b><span>Screening-at-the-device ask for synthesis vendors.</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:1.6rem;">
+          <a class="btn btn--fill" href="case-study.html">Open the full case file <span class="btn__arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tape"></div>
+
+<!-- ============ COHORT PREVIEW ============ -->
+<section class="section">
+  <div class="wrap">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+      <div class="reveal">
+        <p class="kick">The cohort</p>
+        <h2 class="h-sec" style="margin-top:1.1rem;">Writers who can hold a pipette</h2>
+      </div>
+      <a class="btn reveal" href="fellows.html">All fellows →</a>
+    </div>
+
+    <div class="dossiers" style="margin-top:2rem;">
+      <article class="dossier reveal">
+        <div class="dossier__hd"><div class="dossier__id">N7</div><div><div class="dossier__name">Nadia Okafor</div><div class="dossier__role">Writer × Wet-lab</div></div></div>
+        <div class="dossier__body">
+          <div class="drow"><span>Scenario</span><b class="scn">"The Printer in the Garage"</b></div>
+          <div class="drow"><span>Shipped</span><b class="cm">sequence-firewall — synthesis screening hook</b></div>
+          <div class="dossier__venue">DEF CON Biohacking Village</div>
+        </div>
+      </article>
+      <article class="dossier reveal">
+        <div class="dossier__hd"><div class="dossier__id">R2</div><div><div class="dossier__name">Rafael Sørensen</div><div class="dossier__role">Bench × Red-team</div></div></div>
+        <div class="dossier__body">
+          <div class="drow"><span>Scenario</span><b class="scn">"Cold Chain"</b></div>
+          <div class="drow"><span>Shipped</span><b class="cm">$3 tamper-and-temp indicator for vaccine vials</b></div>
+          <div class="dossier__venue">iGEM Responsibility track</div>
+        </div>
+      </article>
+      <article class="dossier reveal">
+        <div class="dossier__hd"><div class="dossier__id">M4</div><div><div class="dossier__name">Mei-Lin Zhao</div><div class="dossier__role">Policy × Fiction</div></div></div>
+        <div class="dossier__body">
+          <div class="drow"><span>Scenario</span><b class="scn">"Open Reading Frame"</b></div>
+          <div class="drow"><span>Shipped</span><b class="cm">Access-tiering policy for AI protein-design tools</b></div>
+          <div class="dossier__venue">Global Community Bio Summit</div>
+        </div>
+      </article>
+    </div>
+
+    <p class="disclaimer reveal" style="margin-top:1.6rem;">
+      <b>Note //</b> Cohort dossiers across this site are illustrative composites that show the
+      shape of fellowship work. They are not real people, and named deliverables are
+      representative examples.
+    </p>
+  </div>
+</section>
+
+<!-- ============ THE SCENE ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <p class="kick reveal">The scene</p>
+    <h2 class="h-sec reveal" style="margin:1.1rem 0 .8rem;">Where our fellows show up</h2>
+    <p class="lead reveal">The fellowship plugs into the crews already doing hands-on biosecurity in the open. Fellows present fixes, run drills, and recruit collaborators across these rooms.</p>
+
+    <div class="venues">
+      <div class="venue reveal"><div class="venue__k">Conference · Village</div><h3>DEF CON Biohacking Village</h3><p>Home venue for our red-team demo track. Fellows present working countermeasures on the Village floor and in the Device Lab.</p></div>
+      <div class="venue reveal"><div class="venue__k">Competition</div><h3>iGEM &amp; Responsibility</h3><p>We mentor teams on responsible design and dual-use review, and recruit fellows from alumni who already think hard about misuse.</p></div>
+      <div class="venue reveal"><div class="venue__k">Community Labs</div><h3>Genspace · BioCurious · DIYbio</h3><p>Sprints run out of community and safety-reviewed lab space. Open benches, real BSL-1/2 discipline.</p></div>
+      <div class="venue reveal"><div class="venue__k">Summit</div><h3>Global Community Bio Summit</h3><p>Where the community-bio world convenes. Fellows workshop tabletop kits and trade disclosure practice.</p></div>
+      <div class="venue reveal"><div class="venue__k">Field</div><h3>Health-security research</h3><p>We track the horizon-scanning and pandemic-preparedness literature, and route serious findings into the proper response channels.</p></div>
+      <div class="venue reveal"><div class="venue__k">Industry</div><h3>Synthesis &amp; synbio vendors</h3><p>Fixes that touch commercial tooling get disclosed to vendors first, with time to remediate before any public dispatch.</p></div>
+    </div>
+
+    <p class="disclaimer reveal" style="margin-top:1.6rem;">
+      <b>Affiliation //</b> Named events, competitions, communities, and companies are public
+      venues where fellows take part and present. References describe the field we work in —
+      they do not imply endorsement, sponsorship, or official affiliation unless stated separately.
+    </p>
+  </div>
+</section>
+
+<div class="tape"></div>
+
+<!-- ============ STATS ============ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="band reveal">
+      <div class="stat"><b>4</b><span>phase loop, every project</span></div>
+      <div class="stat"><b>72H</b><span>countermeasure sprint</span></div>
+      <div class="stat"><b>100%</b><span>dispatches biosafety-reviewed</span></div>
+      <div class="stat"><b class="v">0</b><span>hazards published</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW A COHORT RUNS ============ -->
+<section class="section">
+  <div class="wrap">
+    <p class="kick reveal">How a cohort runs</p>
+    <h2 class="h-sec reveal" style="margin:1.1rem 0 .4rem;">Sixteen weeks. Part-time. Remote-first.</h2>
+    <div class="tl">
+      <div class="tl__row reveal"><div class="tl__k">Weeks 1–3 · Horizon</div><h3>Scenario development</h3><p>Craft sessions with biosecurity mentors. Each fellow drafts a scenario and a threat model. Wild imagination encouraged; operational recipes never get written down. Not once.</p></div>
+      <div class="tl__row reveal"><div class="tl__k">Weeks 4–6 · Red Team</div><h3>Adversarial review &amp; tabletop</h3><p>A mixed panel of scientists, security researchers, and ethicists tears each scenario apart for plausibility and names the load-bearing weakness to hit.</p></div>
+      <div class="tl__row reveal"><div class="tl__k">Weeks 7–12 · Countermeasure</div><h3>The gonzo sprint</h3><p>Bench and build time in safety-reviewed community labs, paired with a technical mentor. A 72-hour capstone turns the defense from prototype to demo.</p></div>
+      <div class="tl__row reveal"><div class="tl__k">Weeks 13–14 · Disclosure</div><h3>Biosafety &amp; disclosure review</h3><p>The board reviews every artifact. Hazardous detail stays dark; vendors and authorities get notified where relevant, with remediation time built in.</p></div>
+      <div class="tl__row reveal"><div class="tl__k">Weeks 15–16 · Dispatch</div><h3>Publish &amp; demonstrate</h3><p>Story and fix ship together as a Red Horizon dispatch, with a live demonstration — most often at the DEF CON Biohacking Village.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta reveal">
+      <p class="kick" style="justify-content:center;">Applications open</p>
+      <h2 class="h-sec" style="margin-top:1rem;">Bring us the disaster only you can imagine.</h2>
+      <p>We're building the 2026 cohort: writers who can hold a pipette, scientists who can hold a reader, and red-teamers who'd rather build the fix than sit on the flaw.</p>
+      <div class="hero__cta">
+        <a class="btn btn--venom" href="apply.html">Start your application <span class="btn__arrow">→</span></a>
+        <a class="btn" href="charter.html">Read the charter first</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <a class="brand" href="index.html">
+          <svg class="brand__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <circle cx="50" cy="53" r="32" stroke="#ece6d6" stroke-width="7"/>
+            <path d="M50 26 L32 80 M50 26 L68 80 M20 60 H80" stroke="#ece6d6" stroke-width="7" stroke-linecap="square"/>
+            <circle cx="50" cy="53" r="6" fill="#e11d10"/>
+          </svg>
+          <span class="brand__txt">EMERGENCE INSTITUTE</span>
+        </a>
+        <p>The Red Horizon Fellowship. Speculative fiction as a biosecurity early-warning system. We publish the cure and redact the recipe.</p>
+        <p class="foot__fam"><b>EMERGENCE INSTITUTE</b> — the whole is stranger than the sum of its parts.</p>
+      </div>
+      <div class="foot__col"><h4>Program</h4><a href="#loop">The Loop</a><a href="fellows.html">Fellows</a><a href="case-study.html">Case File</a><a href="apply.html">Apply</a></div>
+      <div class="foot__col"><h4>Governance</h4><a href="charter.html">Safety Charter</a><a href="charter.html#disclosure">Responsible Disclosure</a><a href="charter.html#conduct">Code of Conduct</a></div>
+      <div class="foot__col"><h4>Contact</h4><a href="mailto:fellowship@emergence-institute.org">fellowship@emergence-institute.org</a><a href="apply.html">Cohort 2026</a></div>
+    </div>
+    <div class="foot__bot">
+      <span>© <span data-year>2026</span> Emergence Institute · a speculative-fiction &amp; biosecurity program</span>
+      <span>Publish the cure. Redact the recipe.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
 </body>
 </html>
