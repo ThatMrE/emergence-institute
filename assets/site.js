@@ -37,16 +37,43 @@
     });
   }
 
-  /* ---- application form (no backend by default) ---- */
-  // Paste a Formspree / Tally / Google Form POST endpoint here to receive real
-  // submissions. Until set, the form runs its confirmation state locally.
-  var FELLOWSHIP_ENDPOINT = "";
+  /* ---- application form ---- */
+  // Google Apps Script web app that captures submissions into a sheet with
+  // email / name / source / message columns. Posts form-encoded, no-cors.
+  var FELLOWSHIP_ENDPOINT =
+    "https://script.google.com/macros/s/AKfycbwAX_8vjyS7QUsCaulYhM4sKKK-PjytfSCr1HYE2NyCipGt-sNUA6IM7nINwNdSQlSBgA/exec";
 
   var form = document.querySelector("[data-apply]");
   if (form) {
     var ok = document.querySelector(".form__ok");
+
+    // Human labels for the fields folded into the combined `message` string.
+    // The sheet only has email/source/name/message columns, so everything
+    // other than email + name is packed into `message` (order preserved).
+    var MESSAGE_FIELDS = [
+      ["pronouns", "Pronouns"],
+      ["location", "Location / timezone"],
+      ["track", "Primary track"],
+      ["portfolio", "Portfolio / sample"],
+      ["background", "Background"],
+      ["scenario", "Scenario pitch"],
+      ["fix", "The fix"],
+      ["affiliation", "Community labs / affiliations"],
+      ["heard", "How they found us"],
+      ["attest_charter", "Attests charter"],
+      ["attest_nohazard", "Attests no hazard"],
+      ["attest_conduct", "Attests conduct"],
+    ];
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      // Preserve native validation (form uses novalidate for styling).
+      if (typeof form.checkValidity === "function" && !form.checkValidity()) {
+        if (typeof form.reportValidity === "function") form.reportValidity();
+        return;
+      }
+
       var submit = form.querySelector('[type="submit"]');
       if (submit) {
         submit.disabled = true;
@@ -59,23 +86,39 @@
           ok.scrollIntoView({ behavior: "smooth", block: "center" });
         }
       }
-      if (FELLOWSHIP_ENDPOINT) {
-        fetch(FELLOWSHIP_ENDPOINT, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
-        })
-          .then(done)
-          .catch(function () {
-            if (submit) {
-              submit.disabled = false;
-              submit.textContent = "File application";
-            }
-            alert("Transmission failed. Email hello@biopunklab.com instead.");
-          });
-      } else {
-        setTimeout(done, 650);
+
+      var data = new FormData(form);
+      function val(n) {
+        var v = data.get(n);
+        return v == null ? "" : String(v).trim();
       }
+
+      var parts = [];
+      MESSAGE_FIELDS.forEach(function (f) {
+        var v;
+        if (f[0].indexOf("attest_") === 0) {
+          v = form.querySelector('[name="' + f[0] + '"]').checked ? "yes" : "no";
+        } else {
+          v = val(f[0]);
+        }
+        if (v) parts.push(f[1] + ": " + v);
+      });
+
+      var body = new URLSearchParams({
+        email: val("email"),
+        name: val("name"),
+        source: "emergence.institute",
+        message: parts.join(" | "),
+      }).toString();
+
+      fetch(FELLOWSHIP_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body,
+      })
+        .then(done)
+        .catch(done);
     });
   }
 
