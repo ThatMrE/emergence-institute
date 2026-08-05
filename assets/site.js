@@ -71,7 +71,7 @@
               submit.disabled = false;
               submit.textContent = "File application";
             }
-            alert("Transmission failed. Email fellowship@emergence-institute.org instead.");
+            alert("Transmission failed. Email hello@biopunklab.com instead.");
           });
       } else {
         setTimeout(done, 650);
