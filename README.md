@@ -1,11 +1,12 @@
 # Emergence Institute — The Red Horizon Fellowship
 
 Static site for the **Red Horizon Fellowship**, a speculative-fiction + biosecurity
-program of the **Emergence Institute**. Fellows write the biotech catastrophe that hasn't
+program of the **Emergence Institute**. Fellows write the biotech catastrophe that has not
 happened yet, red-team it, and build the countermeasure at the bench — then publish the
 fix and redact the hazard.
 
-**No build step, no framework.** Every file is served as-is (GitHub Pages / Netlify friendly).
+**No build step, no framework.** The host serves every file as-is. GitHub Pages and Netlify
+both work.
 
 ## The premise
 
@@ -13,7 +14,7 @@ Fiction reaches a danger before the danger is buildable. The fellowship runs a f
 loop on every project:
 
 1. **Horizon** — write the scenario (a failure mode, never a manual).
-2. **Red Team** — tear it apart; find the one weakness a defender can stand on.
+2. **Red Team** — tear it apart. Find the one weakness a defender can stand on.
 3. **Countermeasure** — build the fix at a safety-reviewed bench (72-hour sprint).
 4. **Dispatch** — publish the story + the fix, after biosafety review. Hazard stays redacted.
 
@@ -48,14 +49,14 @@ To collect real submissions, set the `FELLOWSHIP_ENDPOINT` constant near the top
 
 ## Deploy
 
-Push the default branch; the host (GitHub Pages / Netlify) serves it. `.nojekyll` is present
-so `assets/` and path routes serve cleanly.
+Push the default branch. The host serves it. A `.nojekyll` file keeps `assets/` and the path
+routes serving cleanly.
 
 ## Safety note
 
 This is a speculative-fiction and biosecurity **education** program. Scenarios are fiction.
 The site publishes **no** operational hazard information and describes no method to create,
-obtain, or misuse any biological agent. Named external venues and organizations
-(DEF CON Biohacking Village, iGEM, community labs, and others) are referenced for context
-and do not imply affiliation or endorsement. Fellow dossiers and the sample case file are
+obtain, or misuse any biological agent. The site names external venues and organizations
+(DEF CON Biohacking Village, iGEM, community labs, and others) for context only. They do not
+imply affiliation or endorsement. Fellow dossiers and the sample case file are
 illustrative composites.
